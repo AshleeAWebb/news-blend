@@ -1,0 +1,32 @@
+/* Header.css */
+.header {
+  display: flex;
+  width: 100%;
+  background-color: rgb(145, 140, 135);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  height: 4rem;
+  padding-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.user {
+  height: 2rem;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease; 
+}
+
+.logo:hover,
+.user:hover {
+  transform: scale(1.1);
+}
