@@ -1,0 +1,58 @@
+.card-link-wrapper {
+  display: flex;
+
+  text-decoration: none;
+}
+
+.card {
+  height: 9em;
+  max-width: 45rem;
+  border-radius: 5px;
+  background:#918C87; 
+  box-shadow: 3px 3px 10px rgba(38, 33, 33, 0.3); 
+}
+
+.card-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 23%;
+  padding: 0.3rem 0.3rem 0.3rem 3rem;
+  border-bottom: 1px solid #fd6930; 
+}
+
+.article-card-title,
+.article-card-subtitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #262121;
+  text-shadow: none;
+}
+
+.article-card-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 1.5rem;
+}
+
+.article-card-date {
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+.card-body {
+  display: flex;
+}
+
+.card-image {
+  display: flex;
+  max-width: 10rem;
+  max-height: 5rem;
+  margin-right: .5rem;
+  }
+
+.article-card-description {
+  color: #262121; 
+  font-size: 0.9rem;
+  font-weight: 200;
+}
