@@ -1,19 +1,17 @@
-export async function getNews() {
+export async function getTopNews() {
   const apiKey = 'dad438cd0bc248d6a6f4f18c9bab1b77';
-  const apiUrl = 'https://newsapi.org/v2/everything';
-  const query = 'technology';
-  const fromDate = '2023-07-17';
-  const toDate = '2023-07-24';
-  const sortBy = 'relevancy';
+  const apiUrl = 'https://newsapi.org/v2/top-headlines';
+  const country = 'us';
 
   try {
-    const response = await fetch(`${apiUrl}?q=${query}&from=${fromDate}&to=${toDate}&sortBy=${sortBy}&apiKey=${apiKey}`);
+    const response = await fetch(`${apiUrl}?country=${country}&apiKey=${apiKey}`);
     const data = await response.json();
 
     const articles = data.articles;
     console.log(articles);
+    return articles;
   } catch (error) {
-    console.error('Error fetching news:', error.message);
+    console.error('Error fetching top news:', error.message);
+    return [];
   }
 }
-

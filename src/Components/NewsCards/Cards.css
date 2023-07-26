@@ -17,22 +17,23 @@
   justify-content: flex-start;
   align-items: center;
   height: 23%;
-  padding: 0.3rem 0.3rem 0.3rem 3rem;
+  padding: 0.2rem 0.1rem 0.2rem 0.1rem;
   border-bottom: 1px solid #fd6930; 
 }
 
-.article-card-title,
-.article-card-subtitle {
+.article-card-title, 
+.article-card-date {
   font-size: 1rem;
   font-weight: 800;
   color: #262121;
   text-shadow: none;
 }
 
-.article-card-subtitle {
+.article-card-author {
   font-size: 1rem;
   font-weight: 400;
   margin-left: 1.5rem;
+  color: #262121;
 }
 
 .article-card-date {
@@ -48,11 +49,12 @@
   display: flex;
   max-width: 10rem;
   max-height: 5rem;
-  margin-right: .5rem;
+  padding: .5rem;
   }
 
 .article-card-description {
   color: #262121; 
   font-size: 0.9rem;
   font-weight: 200;
+  text-overflow: ellipsis;
 }

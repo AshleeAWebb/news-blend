@@ -13,10 +13,7 @@ const Cards = ({ author, title, description, urlToImage, publishedAt }) => {
       <section className="card">
         <div className="card-header">
             <h3 className="article-card-title">{title}</h3>
-            <h4 className="article-card-subtitle">
-              {author}
-            </h4>
-            <h4 className="article-card-subtitle article-card-date">
+            <h4 className="article-card-date">
               {getFormattedDate(publishedAt)}
             </h4>
         </div>
@@ -24,6 +21,7 @@ const Cards = ({ author, title, description, urlToImage, publishedAt }) => {
           <img className="card-image" src={urlToImage} alt='article images' />
           <div className="article-card-info">
             <p className="article-card-description">{description}</p>
+            {author && <p className="article-card-author">Written By: {author}</p>}
           </div>
         </div>
       </section>
@@ -32,3 +30,4 @@ const Cards = ({ author, title, description, urlToImage, publishedAt }) => {
 };
 
 export default Cards;
+
