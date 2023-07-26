@@ -1,50 +1,71 @@
-/* DetailedView.css */
-
+/* Default styles for .article-detail */
 .article-detail {
   width: 60%;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
-  padding: 16px;
+  margin: 0.5rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 1rem;
   background-color: #ffffff;
 }
 
 .article-detail h2 {
-  font-size: 2em;
+  font-size: 2rem;
   color: #333;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .article-detail h4 {
-  font-size: 1em;
+  font-size: 1rem;
   color: #999;
-  margin-bottom: 16px;
+  margin-bottom: 0.5rem;
 }
 
 .article-detail img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   object-fit: cover;
-  margin-bottom: 16px;
 }
 
 .article-detail p {
   color: #333;
-  line-height: 1.6em;
-  margin-bottom: 16px;
+  line-height: 1.6rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Author styles */
+.article-link {
+  font-family: 'AVENGEANCE MIGHTIEST AVENGER';
+  color: #fd6930; 
+  cursor: pointer; 
+}
+
+.article-link:active {
+  color: black;
+}
+
 .article-detail p:first-of-type {
   font-weight: bold;
   color: #555;
 }
 
-/* No article found message */
 .article-detail > div {
   text-align: center;
-  padding: 16px;
-  font-size: 1.2em;
+  padding: 1rem;
+  font-size: 1.2rem;
   color: #999;
 }
+
+
+@media (max-width: 1200px) {
+  .article-detail {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .article-detail {
+    width: 90%;
+  }
+}
+
+

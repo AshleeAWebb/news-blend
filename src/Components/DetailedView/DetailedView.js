@@ -21,7 +21,7 @@ const DetailedView = ({ topNews }) => {
     return <div>Article not found.</div>;
   }
 
-  const { author, title, description, urlToImage, publishedAt, content } = article;
+  const { author, url, title, description, urlToImage, publishedAt, content } = article;
 
   return (
     <div className="article-detail">
@@ -31,6 +31,7 @@ const DetailedView = ({ topNews }) => {
       {author && <p>Written By: {author}</p>}
       <p>{description}</p>
       <p>{content}</p>
+      <a className="article-link"href={url} target="_blank" rel="noopener noreferrer">Read More</a>
     </div>
   );
 };

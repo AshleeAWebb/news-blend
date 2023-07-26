@@ -8,26 +8,26 @@ import '../App/App.css';
 import ProfileComponent from '..//Profile/Profile';
 import PageLoader from '../PageLoader/PageLoader';
 import Header from '../Header/Header';
-// import { getTopNews } from '../utilities/apiFetch'
-import mockData from '../utilities/mockData';
+import { getTopNews } from '../utilities/apiFetch'
+// import mockData from '../utilities/mockData';
 import '../assets/fonts/font.css';
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  // const [topNews, setTopNews] = useState([]);
+  const [topNews, setTopNews] = useState([]);
 
-  // useEffect(() => {
-  //   getTopNews()
-  //     .then(response => {
-  //       setTopNews(response);
-  //       setLoading(false);
-  //     })
-  //     .catch(error => {
-  //       setError(true);
-  //       setLoading(false);
-  //     });
-  // }, []);
+  useEffect(() => {
+    getTopNews()
+      .then(response => {
+        setTopNews(response);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError(true);
+        setLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -45,8 +45,8 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<BrowserPage topNews={mockData} />} />
-            <Route path="/detailedview/:index" element={<DetailedView topNews={mockData} />} />
+            <Route path="/" element={<BrowserPage topNews={topNews} />} />
+            <Route path="/detailedview/:index" element={<DetailedView topNews={topNews} />} />
             <Route path="/error" element={<ErrorComponent />} />
             <Route path="/profile" element={<ProfileComponent />} />
             <Route path="/*" element={<Navigate to="/error" replace />} />
