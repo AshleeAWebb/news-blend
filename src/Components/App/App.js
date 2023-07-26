@@ -9,7 +9,7 @@ import ProfileComponent from '..//Profile/Profile';
 import PageLoader from '../PageLoader/PageLoader';
 import Header from '../Header/Header';
 import { getTopNews } from '../utilities/apiFetch'
-import mockData from '../utilities/mockData';
+// import mockData from '../utilities/mockData';
 import '../assets/fonts/font.css';
 
 function App() {
@@ -27,6 +27,13 @@ function App() {
         setError(true);
         setLoading(false);
       });
+  }, []);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, []);
 
   if (loading) return <PageLoader />;

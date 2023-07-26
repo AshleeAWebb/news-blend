@@ -1,5 +1,8 @@
 /* Header.css */
+
+/* Styles for all screen sizes */
 .header {
+  font-family: 'AVENGEANCE MIGHTIEST AVENGER';
   display: flex;
   width: 100%;
   background-color: rgb(145, 140, 135);
@@ -23,10 +26,32 @@
 .user {
   height: 2rem;
   margin-right: 0.5rem;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 .logo:hover,
 .user:hover {
   transform: scale(1.1);
 }
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  margin-right: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  .logo {
+    height: 3rem;
+  }
+
+  .header {
+    padding: 1rem; 
+  }
+}
+
+
+
