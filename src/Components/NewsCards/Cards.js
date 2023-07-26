@@ -9,7 +9,7 @@ const Cards = ({ author, title, description, urlToImage, publishedAt }) => {
   };
 
   return (
-    <NavLink to={`/articles/${title}`} className="card-link-wrapper">
+    <div className="card-link-wrapper">
       <section className="card">
         <div className="card-header">
             <h3 className="article-card-title">{title}</h3>
@@ -25,7 +25,7 @@ const Cards = ({ author, title, description, urlToImage, publishedAt }) => {
           </div>
         </div>
       </section>
-    </NavLink>
+    </div>
   );
 };
 

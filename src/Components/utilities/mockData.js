@@ -1,7 +1,4 @@
-const mockData = {  
-  "status": "ok",
-"totalResults": 17103,
-  "articles": [
+const mockData =  [
     {
       "source": {
         "id": "wired",
@@ -55,6 +52,5 @@ const mockData = {
       "content": "By leveraging the same technology and techniques used to manufacture OLED panels, including lasers, a new machine that recently debuted in China can be used to fix broken OLED panels exhibiting malfu… [+2161 chars]"
     }
   ]
-}
 
 export default mockData;

@@ -1,8 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import '../DetailedView/DetailedView.css';
 
 const DetailedView = ({ topNews }) => {
   const { index } = useParams();
+
+  console.log("Index:", index); 
+  console.log("Top news:", topNews);
 
   const getFormattedDate = (publishedAt) => {
     const date = new Date(publishedAt);
@@ -13,7 +17,7 @@ const DetailedView = ({ topNews }) => {
 
   const article = topNews[articleIndex];
 
-  if (!article) {
+  if (!topNews || !topNews[index]) {
     return <div>Article not found.</div>;
   }
 

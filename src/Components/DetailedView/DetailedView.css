@@ -1,0 +1,50 @@
+/* DetailedView.css */
+
+.article-detail {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+.article-detail h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.article-detail h4 {
+  font-size: 1em;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.article-detail img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.article-detail p {
+  color: #333;
+  line-height: 1.6em;
+  margin-bottom: 16px;
+}
+
+/* Author styles */
+.article-detail p:first-of-type {
+  font-weight: bold;
+  color: #555;
+}
+
+/* No article found message */
+.article-detail > div {
+  text-align: center;
+  padding: 16px;
+  font-size: 1.2em;
+  color: #999;
+}

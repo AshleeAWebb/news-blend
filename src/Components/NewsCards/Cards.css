@@ -1,6 +1,5 @@
 .card-link-wrapper {
   display: flex;
-
   text-decoration: none;
 }
 
@@ -8,7 +7,7 @@
   height: 9em;
   max-width: 45rem;
   border-radius: 5px;
-  background:#918C87; 
+  background:#ffffff; 
   box-shadow: 3px 3px 10px rgba(38, 33, 33, 0.3); 
 }
 
@@ -47,7 +46,6 @@
 
 .card-image {
   display: flex;
-  max-width: 10rem;
   max-height: 5rem;
   padding: .5rem;
   }
