@@ -6,9 +6,7 @@ export async function getTopNews() {
   try {
     const response = await fetch(`${apiUrl}?country=${country}&apiKey=${apiKey}`);
     const data = await response.json();
-
     const articles = data.articles;
-    console.log(articles);
     return articles;
   } catch (error) {
     console.error('Error fetching top news:', error.message);

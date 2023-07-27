@@ -5,8 +5,7 @@ import '../DetailedView/DetailedView.css';
 const DetailedView = ({ topNews }) => {
   const { index } = useParams();
 
-  console.log("Index:", index); 
-  console.log("Top news:", topNews);
+
 
   const getFormattedDate = (publishedAt) => {
     const date = new Date(publishedAt);
