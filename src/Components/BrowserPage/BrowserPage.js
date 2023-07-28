@@ -4,17 +4,25 @@ import './BrowserPage.css';
 import { Link } from 'react-router-dom'; 
 
 function BrowserPage({ topNews }) {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(''); 
+  const [filteredIndices, setFilteredIndices] = useState(
+    topNews.map((_, index) => index) 
+  );
 
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
+    setSearchQuery(e.target.value.toLowerCase());
+    const query = e.target.value.toLowerCase();
+    const filteredIndices = topNews
+      .map((article, index) => ({
+        index,
+        titleMatches: article.title?.toLowerCase().includes(query),
+        descriptionMatches: article.description?.toLowerCase().includes(query),
+      }))
+      .filter((article) => article.titleMatches || article.descriptionMatches)
+      .map((article) => article.index);
+  
+    setFilteredIndices(filteredIndices);
   };
-
-  const filteredNews = topNews.filter((article) => {
-    const titleMatches = article.title?.toLowerCase().includes(searchQuery.toLowerCase()) || false;
-    const descriptionMatches = article.description?.toLowerCase().includes(searchQuery.toLowerCase()) || false;
-    return titleMatches || descriptionMatches;
-  });
 
   return (
     <div>
@@ -22,22 +30,22 @@ function BrowserPage({ topNews }) {
         <input
           type="text"
           placeholder="Search for news..."
-          value={searchQuery}
+          value={searchQuery} 
           onChange={handleSearchChange}
         />
       </div>
       <h1 className='browser-title'>Top Stories</h1>
       <div className="cards-container">
-        {filteredNews.map((article, index) => (
+        {filteredIndices.map((index) => (
           <Link key={index} to={`/detailedview/${index}`} className="no-underline-link"> 
             <Cards
-              source={article.source}
-              author={article.author}
-              title={article.title}
-              description={article.description}
-              url={article.url}
-              urlToImage={article.urlToImage}
-              publishedAt={article.publishedAt}
+              source={topNews[index].source}
+              author={topNews[index].author}
+              title={topNews[index].title}
+              description={topNews[index].description}
+              url={topNews[index].url}
+              urlToImage={topNews[index].urlToImage}
+              publishedAt={topNews[index].publishedAt}
             />
           </Link>
         ))}
@@ -47,4 +55,5 @@ function BrowserPage({ topNews }) {
 }
 
 export default BrowserPage;
+
 

@@ -45,13 +45,27 @@
 
 @media (max-width: 768px) {
   .logo {
-    height: 3rem;
+    height: 4rem;
   }
 
+  .user {
+    height: 2rem;
+  }
+ 
   .header {
     padding: 1rem; 
   }
 }
 
+@media (min-width: 1200px) {
+  .logo {
+    height: 6rem;
+  }
+
+  .user {
+    height: 4rem;
+  }
+ 
+}
 
 

@@ -4,7 +4,7 @@ function Error() {
   return (
     <div>
       <h1>Error</h1>
-      <p>This is the Error component.</p>
+      <p>Stop the presses!!!!!</p>
     </div>
   );
 }

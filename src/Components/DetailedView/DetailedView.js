@@ -1,16 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import '../DetailedView/DetailedView.css';
+import { getFormattedDate, renderDescription, renderImage } from '../utilities/cleaning.js';
 
 const DetailedView = ({ topNews }) => {
   const { index } = useParams();
-
-
-
-  const getFormattedDate = (publishedAt) => {
-    const date = new Date(publishedAt);
-    return date.toLocaleDateString(); 
-  };
 
   const articleIndex = parseInt(index, 10);
 
@@ -26,11 +20,13 @@ const DetailedView = ({ topNews }) => {
     <div className="article-detail">
       <h2>{title}</h2>
       <h4>{getFormattedDate(publishedAt)}</h4>
-      <img src={urlToImage} alt='article images' />
-      {author && <p>Written By: {author}</p>}
-      <p>{description}</p>
+      {renderImage(urlToImage, "detailed-view-image")}
+      <p className="article-author">Written By: {author}</p>
+      {renderDescription(description, "detailed-view-description")} 
       <p>{content}</p>
-      <a className="article-link"href={url} target="_blank" rel="noopener noreferrer">Read More</a>
+      <a className="article-link" href={url} target="_blank" rel="noopener noreferrer">
+        Read More
+      </a>
     </div>
   );
 };
