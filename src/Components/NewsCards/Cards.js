@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../assets/NewsBlend.png';
 import './Cards.css';
 import { getFormattedDate, renderDescription, renderImage } from '../utilities/cleaning.js';
 

@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import BrowserPage from '../BrowserPage/BrowserPage';
@@ -9,7 +8,7 @@ import ProfileComponent from '..//Profile/Profile';
 import PageLoader from '../PageLoader/PageLoader';
 import Header from '../Header/Header';
 import { getTopNews } from '../utilities/apiFetch'
-import mockData from '../utilities/mockData';
+// import mockData from '../utilities/mockData';
 import '../assets/fonts/font.css';
 
 function App() {
@@ -45,8 +44,8 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<BrowserPage topNews={mockData} />} />
-            <Route path="/detailedview/:index" element={<DetailedView topNews={mockData} />} />
+            <Route path="/" element={<BrowserPage topNews={topNews} />} />
+            <Route path="/detailedview/:index" element={<DetailedView topNews={topNews} />} />
             <Route path="/error" element={<ErrorComponent />} />
             <Route path="/profile" element={<ProfileComponent />} />
             <Route path="/*" element={<Navigate to="/error" replace />} />

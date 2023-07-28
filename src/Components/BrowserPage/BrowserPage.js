@@ -29,6 +29,7 @@ function BrowserPage({ topNews }) {
       <div className="search-bar">
         <input
           type="text"
+          id="searchInput"
           placeholder="Search for news..."
           value={searchQuery} 
           onChange={handleSearchChange}
