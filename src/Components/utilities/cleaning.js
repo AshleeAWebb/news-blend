@@ -19,8 +19,8 @@ export const renderDescription = (description, className) => {
 
 export const renderImage = (urlToImage, className) => {
   if (urlToImage) {
-    return <img className={className} src={urlToImage} alt="article image" />;
+    return <img className={className} src={urlToImage} alt="article" />;
   } else {
-    return <img className="card-image" src={logo} alt="default image" />;
+    return <img className="card-image" src={logo} alt="default" />;
   }
 };

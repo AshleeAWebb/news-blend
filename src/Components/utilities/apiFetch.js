@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 export async function getTopNews() {
-  const apiKey = 'dad438cd0bc248d6a6f4f18c9bab1b77';
+  const apiKey = process.env.API_KEY;
   const apiUrl = 'https://newsapi.org/v2/top-headlines';
   const country = 'us';
 
@@ -13,3 +15,4 @@ export async function getTopNews() {
     return [];
   }
 }
+
